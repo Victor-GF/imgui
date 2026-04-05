@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(ImGui)
 
-set(IMGUI_SOURCES
-    ./*.cpp
-    ./*.h
+file(GLOB_RECURSE IMGUI_SOURCES
+        ./*.cpp ./*.h
 )
 
 add_library(ImGui STATIC ${IMGUI_SOURCES})
