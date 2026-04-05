@@ -1,8 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 project(ImGUI)
 
-file(GLOB_RECURSE IMGUI_SOURCES
-        ./*.cpp ./*.h
+set(IMGUI_SOURCES
+    imgui.cpp imgui.h
+    imconfig.h 
+    imgui_internal.h
+    imstb_rectpack.h 
+    imstb_textedit.h
+    imstb_truetype.h 
+    imgui_draw.cpp
+    imgui_tables.cpp
+    imgui_widgets.cpp
+    imgui_demo.cpp
+    # Adiciona APENAS os backends que o projeto realmente usa
+    backends/imgui_impl_glfw.h backends/imgui_impl_glfw.cpp
+    backends/imgui_impl_opengl3.h backends/imgui_impl_opengl3.cpp
 )
 
 add_library(ImGUI STATIC ${IMGUI_SOURCES})
